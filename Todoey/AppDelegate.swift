@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //gets loaded when app is opened
+        do {
+            _ = try Realm()
+        } catch {
+            print("Error initialising Realm \(error)")
+        }
         
         
         return true
